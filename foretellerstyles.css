@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #000000;
+  color: #CCCCCC;
+}
+
+.information-icon {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.information-icon img {
+  width: 60px;
+  height: 60px;
+}
+
+.popup-widget {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  background-color: rgba(0, 0, 0, 1);
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid gold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.popup-widget p {
+  color: #7a7168;
+}
+
+.information-icon:hover .popup-widget {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+header {
+  background-color: #101010;
+  padding: 10px 0;
+  opacity: 0;
+  transition: opacity 0.54s ease;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #81a389;
+  font-size: 21px;
+  padding: 5px 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(148, 160, 153, 0.2);
+  border-radius: 5px;
+  color: #94a099;
+  transform: scale(1.1);
+  transition: color 0s ease, transform 0s ease;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+h1, p {
+  color: #77887B;
+}
+
+h1 {
+  font-size: 21px;
+  opacity: 0;
+  transition: opacity 0.54s ease;
+}
+
+.circular-widget {
+  background-color: #0b0d0b;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 150px;
+  max-width: 600px;
+  margin: 60px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #94a099;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.81s ease;
+}
+
+.circular-widget h1 {
+  margin: 0px 0 0;
+  padding: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.diamond-button {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #101010;
+  transform: rotate(45deg);
+  margin: 10px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.diamond-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 140px;
+}
+
+.diamond-content a {
+  display: block;
+  color: #81a389;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.diamond-button:hover {
+  background-color: rgba(148, 160, 153, 0.2);
+  transform: rotate(45deg) scale(1.1);
+}
+
+.diamond-button:hover .diamond-content {
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
+}
+
+.diamond-button:hover a {
+  color: #94a099;
+}
+
+.button-container .diamond-button + .diamond-button {
+  margin-left: 200px;
+}
+
+.diamond-button {
+  opacity: 0;
+  transition: opacity 0.54s ease;
+}
+
+.diamond-content {
+  opacity: 0;
+  transition: opacity 0.54s ease;
+}
+
+.notification-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-size: 18px;
+  display: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.show-notification {
+  display: block;
+  opacity: 1;
+}
+
+.notification-text {
+  padding: 10px;
+  color: #ffffff;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.27s ease;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #77887B;
+}
+
+tr:nth-child(even) {
+  background-color: #101010;
+}
+
+tr:nth-child(odd) {
+  background-color: #191919;
+}
+
+tr:hover {
+  background-color: rgba(148, 160, 153, 0.2);
+}

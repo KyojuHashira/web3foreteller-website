@@ -1,0 +1,10 @@
+.magic-star {
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 1.54s ease;
+  background-color: rgba(128, 128, 128, 1);
+  min-width: 7px;
+  min-height: 7px;
+/* a bit of geometry magic to transform circles into stars */
+  clip-path: polygon(50% 0%, 61.8% 38.2%, 100% 35.4%, 68.6% 57.1%, 79.1% 91%, 50% 70.9%, 20.9% 91%, 31.4% 57.1%, 0% 35.4%, 38.2% 38.2%);
+}
