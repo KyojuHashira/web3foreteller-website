@@ -1,10 +1,10 @@
-const starsEffect = document.getElementById('stars-effect');
+let starsEffect = document.getElementById('stars-effect');
 
 function getRandomGoldColor() {
   // let's generate a random color close to #deb940 with increased contrast and brightness
-  const red = 222 + Math.random() * 10; // increase red for brightness
-  const green = 185 + Math.random() * 10; // increase green for brightness
-  const blue = 64 - Math.random() * 10; // reduce blue for contrast
+  const red = 222 + Math.random() * 10;
+  const green = 185 + Math.random() * 10;
+  const blue = 64 - Math.random() * 10;
   return `rgba(${red}, ${green}, ${blue}, 1)`;
 }
 
@@ -19,7 +19,7 @@ function getRandomColor() {
 function createRandomStar() {
   const star = document.createElement('div');
   star.className = 'magic-star';
-  const randomSize = Math.random() * 9 + 7; // random size between 7 and 15 pixels
+  const randomSize = Math.random() * 9 + 7; // random size
   star.style.width = `${randomSize}px`;
   star.style.height = `${randomSize}px`;
   const randomOpacity = Math.random() * 0.5 + 0.2; // random opacity
@@ -31,7 +31,7 @@ function createRandomStar() {
     star.style.backgroundColor = `rgba(255, 255, 255, ${brightFactor})`;
   } else if (Math.random() < 0.005) { // 0.5% chance for gold particle
     star.style.backgroundColor = getRandomGoldColor();
-    star.style.opacity = 1; // always high brightness for gold particles
+    star.style.opacity = 1;
   } else {
     // colorize 15% of the elements (#2b2b45 stars)
     if (Math.random() < 0.15) {
@@ -49,7 +49,6 @@ window.addEventListener('mousemove', (e) => {
   const containerRect = container.getBoundingClientRect();
   const x = e.clientX - containerRect.left;
   const y = e.clientY - containerRect.top;
-
   const currentTime = performance.now();
   if (currentTime - lastCreationTime >= CREATION_INTERVAL) {
     const numberOfParticles = Math.floor(Math.random() * 3) + 3; // random stars amount between 3 and 5
