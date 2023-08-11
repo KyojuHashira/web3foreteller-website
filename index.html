@@ -13,19 +13,25 @@
     <link rel="icon" href="favicon.ico">
 </head>
 <body>
-    <header>
-        <nav>
-            <li><a href="https://web3foreteller.xyz">Web3 ForeTeller</a></li>
-            <li><a href="https://snapshot.org/#/kyojuhashira.eth" target="_blank">Vote on Snapshot</a></li>
-            <li><a href="https://web3foreteller.xyz/faqs.html">FAQs</a></li>
-            <li><a href="https://twitter.com/web3soothsayer" target="_blank">Twitter</a></li>
-            <li><a href="https://github.com/users/KyojuHashira/projects/1" target="_blank">GitHub</a></li>
-        </nav>
-    </header>
+<header>
+<nav>
+    <div class="menu-container">
+    <ul>
+    <li><a href="https://web3foreteller.xyz">Web3 ForeTeller</a></li>
+    <li><a href="https://snapshot.org/#/kyojuhashira.eth" target="_blank">Vote on Snapshot</a></li>
+    <li><a href="https://web3foreteller.xyz/faqs.html">FAQs</a></li>
+    <li><a href="https://twitter.com/web3soothsayer" target="_blank">Twitter</a></li>
+    <li><a href="https://github.com/users/KyojuHashira/projects/1" target="_blank">GitHub</a></li>
+    </ul>
+    <button class="matrix-button matrix-button-shadow matrix-button-right" id="switchToBaseMainnet">Switch to Base Mainnet</button>
+  </div>
+</nav>
+</header>
     <div class="content">
-    <div class="circular-widget">
-        <h1>Web3 ForeTeller is ready to generate magic salt and utilize its powers to unveil the shrouded mysteries. Try to focus on your sphere of interest and submit your inquiry..</h1>
-        <div class="stars-effect" id="stars-effect"></div>
+    <div class="circular-widget" id="resultContainer">
+    <span class="magic-result" data-text="Welcome!">Welcome!</span>
+<h1>Web3 ForeTeller is ready to generate magic salt and utilize its powers to unveil the shrouded mysteries. Try to focus on your sphere of interest and submit your inquiry..</h1>
+    <div class="stars-effect" id="stars-effect"></div>
     </div>
     <div class="information-icon">
     <img src="notification.png" alt="Notification Icon">
@@ -33,30 +39,18 @@
         <p>As you move your mouse over the oval widget above, you generate stars at random locations within your cursor's vicinity. Each star has a random size, brightness, and color. Gold stars are rare! If you are able to generate only 0-2 gold stars at once, your luck is running low today. If you can generate 3-4 stars by moving your mouse, everything is fine, but if you are able to get 5+ gold stars at once, your supply of luck is enormous!</p>
         </div>
     </div>
-
-    <div class="notification-container">
-        <div class="notification">
-            <span class="notification-text">Frontend will be unlocked in early August after the Base Mainnet GA launch</span>
-        </div>
-    </div>
-
-    <div class="button-container">
-        <div class="diamond-button">
-            <div class="diamond-content">
-                <a href="#">Altruistic Answer</a>
-            </div>
-        </div>
-        <div class="diamond-button">
-            <div class="diamond-content">
-                <a href="#">Burn some gas!</a>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="notification-container">
-    <div class="notification">Coming soon</div></div>
+    <br /><br />
+    <span id="resultOutput"></span>
+    <span id="randomSalt"></span><br />
+    <div class="actionbuttons">
+    <button class="matrix-button matrix-button-shadow" onclick="getRandomNumberFree()">Altruistic Answer</button>
+    <button class="matrix-button matrix-button-shadow" onclick="getRandomNumberGasBurn()">Burn some Gas</button>
+    <script src="networkcheck.js"></script>
     <script src="magicalstars.js"></script>
     <script src="fade.js"></script>
-    <script src="notification.js"></script>
+    </div>
+    </div>
+    </div>
+    </div>
 </body>
 </html>
