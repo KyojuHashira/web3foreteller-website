@@ -1,314 +1,296 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Ubuntu', sans-serif;
-  background-color: #000000;
-  color: #CCCCCC;
+     margin: 0;
+     padding: 0;
+     font-family: 'Ubuntu', sans-serif;
+     background-color: #000000;
+     color: #CCCCCC;
 }
-
-.magic-result, .magic-result::before, .magic-result::after {
-    position: relative;
-    display: inline-block;
+ .magic-result, .magic-result::before, .magic-result::after {
+     position: relative;
+     display: inline-block;
 }
-
-.magic-result::before, .magic-result::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
+ .magic-result::before, .magic-result::after {
+     content: attr(data-text);
+     position: absolute;
+     top: 0;
+     left: 0;
+     pointer-events: none;
 }
-
-.magic-result {
-    color: #FFFFFF;
-    z-index: 3;
-    font-size: 20px;
+ .magic-result {
+     color: #FFFFFF;
+     z-index: 3;
+     font-size: 20px;
 }
-
-.magic-result::before {
-    filter: blur(5px) brightness(3);
-    color: #FF33FF;
-    animation: glow 1.5s infinite alternate;
-    z-index: 1;
+ .magic-result::before {
+     filter: blur(5px) brightness(3);
+     color: #FF33FF;
+     animation: glow 1.5s infinite alternate;
+     z-index: 1;
 }
-
-.magic-result::after {
-    filter: blur(10px) brightness(5);
-    color: #FF33FF;
-    animation: glow 1.5s infinite alternate reverse;
-    z-index: 2;
+ .magic-result::after {
+     filter: blur(10px) brightness(5);
+     color: #FF33FF;
+     animation: glow 1.5s infinite alternate reverse;
+     z-index: 2;
 }
-
-@keyframes glow {
-    0% {
-        filter: blur(3px) brightness(2);
+ @keyframes glow {
+     0% {
+         filter: blur(3px) brightness(2);
     }
-    100% {
-        filter: blur(5px) brightness(3);
+     100% {
+         filter: blur(5px) brightness(3);
     }
 }
-
-.matrix-button {
-    background-color: #000;
-    color: #33FF33;
-    border: 2px solid #33FF33;
-    border-radius: 5px;
-    padding: 15px 20px;
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-    margin-right: 10px;
+ .matrix-button {
+     background-color: #000;
+     color: #33FF33;
+     border: 2px solid #33FF33;
+     border-radius: 5px;
+     padding: 15px 20px;
+     font-family: 'Courier New', monospace;
+     font-size: 16px;
+     text-transform: uppercase;
+     cursor: pointer;
+     outline: none;
+     transition: all 0.3s;
+     position: relative;
+     overflow: hidden;
+     margin-right: 10px;
 }
-
-.matrix-button:hover {
-    background-color: #33FF33;
-    color: #000;
-    border-color: #000;
+ .matrix-button:hover {
+     background-color: #33FF33;
+     color: #000;
+     border-color: #000;
 }
-
-.matrix-button:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #33FF33;
-    transform: translateX(-100%);
-    transition: transform 0.3s;
+ .matrix-button:before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     background-color: #33FF33;
+     transform: translateX(-100%);
+     transition: transform 0.3s;
 }
-
-.matrix-button:hover:before {
-    transform: translateX(0%);
+ .matrix-button:hover:before {
+     transform: translateX(0%);
 }
-
-.matrix-button:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #33FF33;
-    transform: translateX(100%);
-    transition: transform 0.3s;
+ .matrix-button:after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     background-color: #33FF33;
+     transform: translateX(100%);
+     transition: transform 0.3s;
 }
-
-.matrix-button:hover:after {
-    transform: translateX(0%);
+ .matrix-button:hover:after {
+     transform: translateX(0%);
 }
-
-.matrix-button-shadow {
-    box-shadow: 0 8px 15px rgba(51, 255, 51, 0.2);
+ .matrix-button-shadow {
+     box-shadow: 0 8px 15px rgba(51, 255, 51, 0.2);
 }
-
-.matrix-button:hover .matrix-button-shadow {
-    box-shadow: 0 4px 10px rgba(51, 255, 51, 0.4);
+ .matrix-button:hover .matrix-button-shadow {
+     box-shadow: 0 4px 10px rgba(51, 255, 51, 0.4);
 }
-
-.information-icon {
-  position: relative;
-  display: inline-block;
-  margin-top: 20px;
-  cursor: pointer;
+ .matrix-button.disabled-button {
+     background-color: #f3f3f3;
+     color: #a0a0a0;
+     border: 1px solid #d0d0d0;
+     cursor: not-allowed;
+     opacity: 0.6;
+     pointer-events: none;
+     text-shadow: 0 1px 0 #ffffff;
 }
-
-.information-icon img {
-  width: 60px;
-  height: 60px;
+ .matrix-button.disabled-button:before, .matrix-button.disabled-button:after {
+     background-color: #d0d0d0;
+     opacity: 0.6;
 }
-
-.popup-widget {
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  background-color: rgba(0, 0, 0, 1);
-  font-size: 17px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid gold;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+ .matrix-button.disabled-button:hover {
+     background-color: #f3f3f3;
+     color: #a0a0a0;
+     border-color: #d0d0d0;
+     box-shadow: none;
 }
-
-.popup-widget p {
-  color: #7a7168;
+ #networkAlert {
+     color: #d9534f;
+     font-size: 14px;
+     margin-top: 20px;
 }
-
-.information-icon:hover .popup-widget {
-  opacity: 1;
-  pointer-events: auto;
+ .information-icon {
+     position: relative;
+     display: inline-block;
+     margin-top: 20px;
+     cursor: pointer;
 }
-
-header {
-  background-color: #101010;
-  padding: 10px 0;
-  opacity: 0;
-  transition: opacity 0.54s ease;
+ .information-icon img {
+     width: 60px;
+     height: 60px;
 }
-
-nav {
-  position: relative;
+ .popup-widget {
+     position: absolute;
+     bottom: calc(100% + 10px);
+     left: 50%;
+     transform: translateX(-50%);
+     width: 500px;
+     background-color: rgba(0, 0, 0, 1);
+     font-size: 17px;
+     padding: 10px;
+     border-radius: 10px;
+     border: 2px solid gold;
+     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity 0.3s ease;
 }
-
-.menu-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+ .popup-widget p {
+     color: #7a7168;
 }
-
-ul {
-  text-align: center;
-  padding: 0;
-  width: 100%;
+ .information-icon:hover .popup-widget {
+     opacity: 1;
+     pointer-events: auto;
 }
-
-li {
-    display: inline;
-    padding: 0 18px;
-    position: relative;
+ header {
+     background-color: #101010;
+     padding: 10px 0;
+     opacity: 0;
+     transition: opacity 0.54s ease;
 }
-
-li:not(:last-child):after {
-    content: '•';
-    position: absolute;
-    right: -6px;
-    top: 50%;
-    transform: translateY(-50%);
+ nav {
+     position: relative;
 }
-
-nav a:hover + li::after {
-    opacity: 0.6;
+ .menu-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
 }
-
-.matrix-button-right {
-  position: absolute;
-  right: 0;
-  top: auto;
-  transform: none;
+ ul {
+     text-align: center;
+     padding: 0;
+     width: 100%;
 }
-
-nav a {
-  text-decoration: none;
-  color: #81a389;
-  font-size: 21px;
-  padding: 5px 10px;
-  transition: color 0.3s ease, transform 0.3s ease;
+ li {
+     display: inline;
+     padding: 0 18px;
+     position: relative;
 }
-
-nav a:hover {
-  background-color: rgba(148, 160, 153, 0.2);
-  border-radius: 5px;
-  color: #94a099;
-  transform: scale(1.1);
-  transition: color 0s ease, transform 0s ease;
+ li:not(:last-child):after {
+     content: '•';
+     position: absolute;
+     right: -6px;
+     top: 50%;
+     transform: translateY(-50%);
 }
-
-.content {
-  padding: 20px;
-  text-align: center;
+ nav a:hover + li::after {
+     opacity: 0.6;
 }
-
-h1, p {
-  color: #77887B;
+ .matrix-button-right {
+     position: absolute;
+     right: 0;
+     top: auto;
+     transform: none;
 }
-
-h1 {
-  font-size: 21px;
-  opacity: 0;
-  transition: opacity 0.54s ease;
+ nav a {
+     text-decoration: none;
+     color: #81a389;
+     font-size: 21px;
+     padding: 5px 10px;
+     transition: color 0.3s ease, transform 0.3s ease;
 }
-
-.circular-widget {
-  background-color: #0b0d0b;
-  color: #FFFFFF;
-  border-radius: 50%;
-  padding: 150px;
-  max-width: 600px;
-  min-height: 130px;
-  margin: 60px auto;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid #94a099;
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: scale(1);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+ nav a:hover {
+     background-color: rgba(148, 160, 153, 0.2);
+     border-radius: 5px;
+     color: #94a099;
+     transform: scale(1.1);
+     transition: color 0s ease, transform 0s ease;
 }
-
-.circular-widget::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('path_to_sparkle.png'); /* need to implement sparkles
-    background-size: 50px 50px;
-    opacity: 0;
-    z-index: 4;
-    pointer-events: none;
-    animation: sparkleEffect 1s ease-out forwards;
+ .content {
+     padding: 20px;
+     text-align: center;
 }
-
-.circular-widget.fade-out > h1 {
-    animation: fadeAndBlur 0.8s ease-out forwards;
+ h1, p {
+     color: #77887B;
 }
-
-@keyframes sparkleEffect {
-    0% {
-        transform: scale(0.1);
-        opacity: 1;
+ h1 {
+     font-size: 21px;
+     opacity: 0;
+     transition: opacity 0.54s ease;
+}
+ table {
+     border-collapse: collapse;
+     width: 100%;
+     max-width: 950px;
+     margin: 0 auto;
+     opacity: 0;
+     transition: opacity 0.27s ease;
+}
+ th, td {
+     padding: 15px;
+     text-align: left;
+     border-bottom: 1px solid #77887B;
+}
+ tr:nth-child(even) {
+     background-color: #101010;
+}
+ tr:nth-child(odd) {
+     background-color: #191919;
+}
+ tr:hover {
+     background-color: rgba(148, 160, 153, 0.2);
+}
+ .circular-widget {
+     background-color: #0b0d0b;
+     color: #FFFFFF;
+     border-radius: 50%;
+     padding: 150px;
+     max-width: 600px;
+     min-height: 130px;
+     margin: 60px auto;
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+     border: 2px solid #94a099;
+     position: relative;
+     overflow: hidden;
+     opacity: 0;
+     transform: scale(1);
+     transition: transform 0.5s ease, opacity 0.5s ease;
+}
+ .circular-widget::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url('path_to_sparkle.png');
+    /* a transparent sparkle PNG */
+     background-size: 50px 50px;
+     opacity: 0;
+     z-index: 4;
+     pointer-events: none;
+     animation: sparkleEffect 1s ease-out forwards;
+}
+ .circular-widget.fade-out > h1 {
+     animation: fadeAndBlur 0.8s ease-out forwards;
+}
+ @keyframes sparkleEffect {
+     0% {
+         transform: scale(0.1);
+         opacity: 1;
     }
-    100% {
-        transform: scale(1);
-        opacity: 0;
+     100% {
+         transform: scale(1);
+         opacity: 0;
     }
 }
-
-.circular-widget.fade-out > .magic-result {
-    animation: fadeAndBlur 0.8s ease-out forwards;
+ .circular-widget.fade-out > .magic-result {
+     animation: fadeAndBlur 0.8s ease-out forwards;
 }
-
-@keyframes fadeAndBlur {
-    100% {
-        filter: blur(8px);
-        opacity: 0;
+ @keyframes fadeAndBlur {
+     100% {
+         filter: blur(8px);
+         opacity: 0;
     }
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 950px;
-  margin: 0 auto;
-  opacity: 0;
-  transition: opacity 0.27s ease;
-}
-
-th, td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #77887B;
-}
-
-tr:nth-child(even) {
-  background-color: #101010;
-}
-
-tr:nth-child(odd) {
-  background-color: #191919;
-}
-
-tr:hover {
-  background-color: rgba(148, 160, 153, 0.2);
 }
