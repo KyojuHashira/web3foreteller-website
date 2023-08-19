@@ -2,7 +2,9 @@ window.addEventListener('load', function() {
     const header = document.querySelector('header');
     const circularWidget = document.querySelector('.circular-widget');
     const h1 = document.querySelector('h1');
-    const buttonsContainer = document.querySelector('.button-container');
+    const actionButtons = document.querySelectorAll('.matrix-button.matrix-button-shadow');
+    const informationIcon = document.querySelector('.information-icon');
+    const networkAlert = document.querySelector('#networkAlert');
 
     header.style.opacity = 1;
 
@@ -14,14 +16,10 @@ window.addEventListener('load', function() {
     }, 510);
 
     setTimeout(() => {
-        buttonsContainer.style.opacity = 1;
-        const diamondButtons = document.querySelectorAll('.diamond-button');
-        const diamondContents = document.querySelectorAll('.diamond-content');
-        diamondButtons.forEach(button => {
+        actionButtons.forEach(button => {
             button.style.opacity = 1;
         });
-        diamondContents.forEach(content => {
-            content.style.opacity = 1;
-        });
-    }, 510 + transitionDuration); // set fade-in time here
+        informationIcon.style.opacity = 1;
+        networkAlert.style.opacity = 1; // Added this line
+    }, 510 + transitionDuration);
 });
