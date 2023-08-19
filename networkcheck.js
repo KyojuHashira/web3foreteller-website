@@ -4,19 +4,40 @@ const chainIdHex = '0x' + chainIdDecimal.toString(16);
 if (typeof window.ethereum !== 'undefined') {
     window.ethereum.request({ method: 'eth_chainId' }).then(handleChainChange);
     window.ethereum.on('chainChanged', handleChainChange);
-} else {
-    alert('Please install MetaMask or another Web3 wallet to use this feature.');
 }
 
 function handleChainChange(_chainId) {
     const currentChainId = parseInt(_chainId, 16);
+    const btn1 = document.getElementById('notBaseMainnet1');
+    const btn2 = document.getElementById('notBaseMainnet2');
+    const networkAlert = document.getElementById('networkAlert');
     
     if (currentChainId !== chainIdDecimal) {
         document.getElementById('switchToBaseMainnet').style.display = 'block';
+
+        // disable the buttons
+        btn1.classList.add('disabled-button');
+        btn1.onclick = null; // remove the onclick event
+        btn2.classList.add('disabled-button');
+        btn2.onclick = null; // remove the onclick event
+
+        // show the network alert message
+        networkAlert.style.display = 'block';
     } else {
         document.getElementById('switchToBaseMainnet').style.display = 'none';
+
+        // enable the buttons
+        btn1.classList.remove('disabled-button');
+        btn1.onclick = getRandomNumberFree; // re-add the onclick event
+        btn2.classList.remove('disabled-button');
+        btn2.onclick = getRandomNumberGasBurn; // re-add the onclick event
+
+        // hide the network alert message
+        networkAlert.style.display = 'none';
     }
 }
+
+
 
 document.getElementById('switchToBaseMainnet').addEventListener('click', function() {
     const params = {
