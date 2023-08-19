@@ -5,6 +5,38 @@ body {
      background-color: #000000;
      color: #CCCCCC;
 }
+
+.matrix-label {
+    font-family: 'Ubuntu', sans-serif;
+    color: #b0a69b;
+    background-color: #343541;
+    font-size: 13px;
+    padding: 2px 5px;
+    display: block;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-top: 20px;
+}
+
+.matrix-code {
+    font-family: 'Ubuntu', sans-serif;
+    color: #00a669;
+    background-color: #000000;
+    font-size: 10px;
+    padding: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    display: block;
+    white-space: pre;
+    border: 1px solid #161616;
+    border-top: none;
+}
+
+.matrix-label, .matrix-code {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
  .magic-result, .magic-result::before, .magic-result::after {
      position: relative;
      display: inline-block;
@@ -208,7 +240,7 @@ body {
      transition: color 0s ease, transform 0s ease;
 }
  .content {
-     padding: 20px;
+     padding: 0px;
      text-align: center;
 }
  h1, p {
@@ -265,7 +297,7 @@ body {
      width: 100%;
      height: 100%;
      background-image: url('path_to_sparkle.png');
-    /* a transparent sparkle PNG */
+    /* Will add sparkle effect a little bit later */
      background-size: 50px 50px;
      opacity: 0;
      z-index: 4;
@@ -293,4 +325,14 @@ body {
          filter: blur(8px);
          opacity: 0;
     }
+}
+
+.circular-widget.fade-out > .matrix-label,
+.circular-widget.fade-out > .matrix-code {
+    animation: fadeAndBlur 0.8s ease-out 0s forwards;
+}
+
+header, .circular-widget, h1, .matrix-button.matrix-button-shadow, .information-icon, #networkAlert {
+    opacity: 0;
+    transition: opacity 0.5s;
 }
