@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,8 +44,9 @@
     <span id="resultOutput"></span>
     <span id="randomSalt"></span><br />
     <div class="actionbuttons">
-    <button class="matrix-button matrix-button-shadow" onclick="getRandomNumberFree()">Altruistic Answer</button>
-    <button class="matrix-button matrix-button-shadow" onclick="getRandomNumberGasBurn()">Burn some Gas</button>
+    <button class="matrix-button matrix-button-shadow" onclick="getRandomNumberFree()" id="notBaseMainnet1">Altruistic Answer</button>
+    <button class="matrix-button matrix-button-shadow" onclick="getRandomNumberGasBurn()" id="notBaseMainnet2">Burn some Gas</button>
+    <div id="networkAlert" style="display: none;">To use these features, please switch to Base network.</div>
     <script src="networkcheck.js"></script>
     <script src="magicalstars.js"></script>
     <script src="fade.js"></script>
