@@ -73,6 +73,7 @@ body {
          filter: blur(5px) brightness(3);
     }
 }
+/* Rework glow to reduce GPU load for weak PCs */
  .matrix-button {
      background-color: #000;
      color: #33FF33;
